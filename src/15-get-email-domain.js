@@ -8,8 +8,11 @@
  * For the input 'prettyandsimple@example.com', the output should be 'example.com'
  *
  */
-function getEmailDomain(/* email */) {
-  throw new Error('Not implemented');
+function getEmailDomain(email) {
+  let result = email.match(/@[a-z\-0-9]+\.[a-z]+/g);
+  result = result.join('').split('');
+  result.splice(0, 1);
+  return result.join('');
 }
 
 module.exports = getEmailDomain;
